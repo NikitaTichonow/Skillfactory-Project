@@ -1,3 +1,25 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from .models import Post
 
-# Create your views here.
+# ====== Стартовая страница ============================================================================================
+def Start_Padge(request):
+    news = Post.objects.filter(type='NW').order_by('-dateCreation')
+    return render(request, 'flatpages/Start.html', {'news': news})
+
+
+# ====== Новости =======================================================================================================
+class NewsList(ListView):
+    paginate_by = 10
+    model = Post
+    template_name = 'news/news_list.html'
+    context_object_name = 'news'
+
+
+class NewsDetail(DetailView):
+    model = Post
+    template_name = 'news/news_detail.html'
+    context_object_name = 'post'
+
+
