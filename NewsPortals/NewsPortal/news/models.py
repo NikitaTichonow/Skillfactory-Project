@@ -1,6 +1,9 @@
+
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Sum
+
+
 
 
 class Author(models.Model):
@@ -72,6 +75,15 @@ class Comment(models.Model):
         self.rating -= 1
         self.save()
 
+
+class Article(models.Model):
+    class Meta:
+        db_table = "article"
+
+    title = models.CharField('Название статьи', max_length=200)
+
+    def __str__(self):
+        return self.title
 
 
 

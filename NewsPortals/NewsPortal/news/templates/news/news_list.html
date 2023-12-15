@@ -4,10 +4,14 @@
 
 {% block content %}
     <h2>Список новостей</h2>
+<hr />
+<h3>Сейчас {{ time_now|date:'d F Y / H:i' }}, Всего публикаций: {{ news|length }} {{ PostList1.queryset.count}} </h3>
+<hr />
     <ul>
         {% for post in news %}
-            <h3><em>{{ post.title|censor }}</em></h3>
-            <p>{{ post.dateCreation|date:"d.m.Y" }}</p>
+            <h2><em>{{ post.title|censor }}</em></h2>
+            <p>Автор: {{ post.author.authorUser.username }}</p>
+            <p>Дата публикации: {{ post.dateCreation|date:'d F Y' }}.</p>
             <p>{{ post.text|censor|truncatewords:20}} </p>
         {% endfor %}
 {% endblock %}

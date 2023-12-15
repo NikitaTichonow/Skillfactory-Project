@@ -1,7 +1,10 @@
 {% extends 'flatpages/default.html' %}
 
+{% load custom_filters %}
+
 {% block content %}
-    <h1><em>{{ post.title}}</em></h1>
-    <p>{{ post.dateCreation|date:"d.m.Y" }}</p>
-    <p>{{ post.text}}</p>
+    <h1><em>{{ post.title }}</em></h1>
+    <p>Дата публикации: {{ post.dateCreation|date:'d F Y' }}. Время публикации: {{ time_now|time:"H:i" }}</p>
+    <p>{{ post.text|censor }}</p>
+    <p>Автор: {{ post.author.authorUser.username }}</p>
 {% endblock %}
