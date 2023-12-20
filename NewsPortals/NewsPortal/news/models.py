@@ -1,10 +1,7 @@
-
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Sum
-
-
-
+from django.urls import reverse
 
 class Author(models.Model):
     authorUser = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -54,6 +51,9 @@ class Post(models.Model):
     def preview(self):
         return self.text[0:123] + '...'
 
+    def get_absolute_url(self):
+        return reverse('news_detail', args=[str(self.id)])
+
 
 class PostCategory(models.Model):
     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -74,16 +74,6 @@ class Comment(models.Model):
     def dislike(self):
         self.rating -= 1
         self.save()
-
-
-class Article(models.Model):
-    class Meta:
-        db_table = "article"
-
-    title = models.CharField('Название статьи', max_length=200)
-
-    def __str__(self):
-        return self.title
 
 
 
