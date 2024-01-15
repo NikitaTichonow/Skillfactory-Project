@@ -14,14 +14,14 @@ def send_notifications(preview, pk, head, subscribers):
         'post_created_email.html',
         {
             'text': preview,
-            'link': f'{SITE_URL}/news/{pk}'
+            'link': f'{SITE_URL}/news_list/{pk}'
         }
     )
 
     msg = EmailMultiAlternatives(
         subject=head,
         body='',
-        from_email= "nik7674@yandex.ru",
+        from_email="nik7674@yandex.ru",
         to=subscribers,
     )
 
@@ -31,7 +31,7 @@ def send_notifications(preview, pk, head, subscribers):
 @receiver(m2m_changed, sender=PostCategory)
 def notify_about_new_post(instance, sender, **kwargs):
     if kwargs['action'] == 'post_add':
-        categories = instance.choice_category.all()
+        categories = instance.postCategory.all()
         subscribers_emails = []
 
         for cat in categories:
@@ -40,5 +40,5 @@ def notify_about_new_post(instance, sender, **kwargs):
                 if sub.user.email:
                     subscribers_emails.append(sub.user.email)
 
-        send_notifications(instance.preview(), instance.pk, instance.head, subscribers_emails)
+        send_notifications(instance.preview(), instance.pk, instance.title, subscribers_emails)
 
