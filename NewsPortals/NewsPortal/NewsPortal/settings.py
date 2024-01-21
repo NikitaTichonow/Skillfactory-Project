@@ -194,3 +194,16 @@ ADMINS = (
 )
 
 EMAIL_SUBJECT_PREFIX = 'News Portal'
+
+CELERY_BROKER_URL = 'redis://localhost:6379' # указывает на URL брокера сообщений (Redis). По умолчанию он находится на порту 6379.
+CELERY_RESULT_BACKEND = 'redis://localhost:6379' #  указывает на хранилище результатов выполнения задач.
+CELERY_ACCEPT_CONTENT = ['application/json'] # допустимый формат данных.
+CELERY_TASK_SERIALIZER = 'json' # метод сериализации задач.
+CELERY_RESULT_SERIALIZER = 'json' # метод сериализации результатов.
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache_files'), # Указываем, куда будем сохранять кэшируемые файлы! Не забываем создать папку cache_files внутри папки с manage.py!
+    }
+}

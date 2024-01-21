@@ -7,6 +7,9 @@ class Author(models.Model):
     authorUser = models.OneToOneField(User, on_delete=models.CASCADE)
     ratingAuthor = models.SmallIntegerField(default=0)
 
+    def __str__(self):
+        return f'{self.authorUser}' #Показывает имена авторов
+
     def update_rating(self):
         postRat = self.post_set.aggregate(postRating=Sum('rating'))
         pRat = 0
@@ -20,8 +23,14 @@ class Author(models.Model):
         self.save()
 
 
+
+
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
+    subscribers = models.ManyToManyField(User, related_name='categories')
+
+    def __str__(self):
+        return self.name #Показывает категории
 
 
 
