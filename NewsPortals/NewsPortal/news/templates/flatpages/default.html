@@ -12,6 +12,8 @@
     </head>
     <body>
         <!-- Адаптивная навигация-->
+    {% load cache %} <!-- Загружаем кэширование -->
+    {% cache 30 header %} <!-- Кэшируем отдельный блок на 30 секунд -->
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
              <div class="container">
                  <a class="navbar-brand" href="/">News Portal</a>
@@ -48,6 +50,7 @@
                 </div>
             </div>
         </nav>
+         {% endcache %}
         <!-- Адаптивная навигация вариант №1
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">

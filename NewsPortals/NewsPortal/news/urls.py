@@ -1,11 +1,11 @@
 from django.urls import path
 from . import views
-from .views import NewsList, NewsDetail, Search, NewsCreate, NewsDelete, NewsEdit, ArticleList, ArticleDetail, \
-    ArticleDelete, ArticleEdit, subscriptions
+from .views import NewsList, NewsDetail, Search, NewsCreate, NewsDelete, NewsEdit, ArticleList, ArticleDetail, ArticleDelete, ArticleEdit, subscriptions
+from django.views.decorators.cache import cache_page
 
 urlpatterns = [
-    path('', views.start, name='home'),  # URL-шаблон Стартовой страницы
-    path('news_list/', views.NewsList.as_view(), name='news_list'),  # URL-шаблон для списка новостей
+    path('', cache_page(60 * 1)(views.start), name='home'),  # URL-шаблон Стартовой страницы
+    path('news_list/', cache_page(60 * 5)(views.NewsList.as_view()), name='news_list'),  # URL-шаблон для списка новостей
     path('news_list/<int:pk>', views.NewsDetail.as_view(), name='news_detail'),  # URL-шаблон для списка новостей
     path('search/', views.Search.as_view(), name='search'),  # URL-шаблон Поисковой страницы
     path('news_create/', views.NewsCreate.as_view(), name='news_create'),  # URL-шаблон для создания новостей
@@ -17,5 +17,6 @@ urlpatterns = [
     path('article_edit/<int:pk>', views.ArticleEdit.as_view(), name='article_edit'),   # URL-шаблон для редактирования статей
     path('article_delete/<int:pk>', views.ArticleDelete.as_view(), name='article_delete'),   # URL-шаблон для удаления статей
     path('subscriptions/', subscriptions, name='subscriptions'),
+
 ]
 

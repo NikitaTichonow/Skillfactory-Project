@@ -11,6 +11,9 @@ from .forms import NewsForm, ArticleForm
 from .models import Post, Category, Subscription
 from .filters import PostFilter
 
+
+
+
 # ====== Стартовая страница ============================================================================================
 def Start_Padge(request):
     news = Post.objects.filter(type='NW').order_by('-dateCreation')
@@ -172,3 +175,4 @@ def subscriptions(request):
         'subscriptions.html',
         {'categories': categories_with_subscriptions},
     )
+
