@@ -10,7 +10,9 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .forms import NewsForm, ArticleForm
 from .models import Post, Category, Subscription
 from .filters import PostFilter
-
+from django.db import models
+from django.utils.translation import gettext as _
+from django.utils.translation import pgettext_lazy # импортируем «ленивый» геттекст с подсказкой
 
 
 
