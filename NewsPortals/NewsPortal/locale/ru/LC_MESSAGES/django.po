@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-26 23:51+0300\n"
+"POT-Creation-Date: 2024-02-28 22:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
 #: news/templates/account/email/email_confirmation_message.txt:5
 #, python-format
 msgid ""
@@ -29,3 +30,11 @@ msgid ""
 "\n"
 "Хорошего дня!\n"
 msgstr ""
+
+#: news/templates/news/test.html:28
+msgid "Check out my new cool translation"
+msgstr "Зацени мой классный перевод"
+
+#: news/views.py:21
+msgid "Hello world"
+msgstr "Привет мир"

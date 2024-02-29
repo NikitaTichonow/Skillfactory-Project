@@ -20,3 +20,113 @@ Traceback (most recent call last):
   File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-02-29 20:01:20,309 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. /home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py
+Traceback (most recent call last):
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-02-29 20:01:22,115 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. /home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py
+Traceback (most recent call last):
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-02-29 20:12:53,631 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. /home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py
+Traceback (most recent call last):
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-02-29 20:12:55,273 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. /home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py
+Traceback (most recent call last):
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-02-29 20:16:51,386 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. /home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py
+Traceback (most recent call last):
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-02-29 20:16:53,042 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. /home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py
+Traceback (most recent call last):
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-02-29 21:57:28,914 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. /home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py
+Traceback (most recent call last):
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-02-29 21:57:31,402 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. /home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py
+Traceback (most recent call last):
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-02-29 21:59:35,858 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. /home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py
+Traceback (most recent call last):
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-02-29 21:59:38,333 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. /home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py
+Traceback (most recent call last):
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/nikita/PycharmProjects/NewsPortals/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.

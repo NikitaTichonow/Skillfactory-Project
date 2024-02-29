@@ -1,9 +1,11 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
-from .views import NewsList, NewsDetail, Search, NewsCreate, NewsDelete, NewsEdit, ArticleList, ArticleDetail, ArticleDelete, ArticleEdit, subscriptions
+from .views import NewsList, NewsDetail, Search, NewsCreate, NewsDelete, NewsEdit, ArticleList, ArticleDetail, ArticleDelete, ArticleEdit, subscriptions, Test_page
 from django.views.decorators.cache import cache_page
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
     path('', cache_page(60 * 1)(views.start), name='home'),  # URL-шаблон Стартовой страницы
     path('news_list/', cache_page(60 * 5)(views.NewsList.as_view()), name='news_list'),  # URL-шаблон для списка новостей
     path('news_list/<int:pk>', views.NewsDetail.as_view(), name='news_detail'),  # URL-шаблон для списка новостей
@@ -17,6 +19,8 @@ urlpatterns = [
     path('article_edit/<int:pk>', views.ArticleEdit.as_view(), name='article_edit'),   # URL-шаблон для редактирования статей
     path('article_delete/<int:pk>', views.ArticleDelete.as_view(), name='article_delete'),   # URL-шаблон для удаления статей
     path('subscriptions/', subscriptions, name='subscriptions'),
-
+    path('test/', views.Test_page.as_view()),
 ]
+
+
 

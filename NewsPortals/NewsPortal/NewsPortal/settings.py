@@ -28,9 +28,10 @@ LOCALE_PATHS = [
 #
 # ALLOWED_HOSTS = ["http://127.0.0.1:8000/"]
 
-
-
 INSTALLED_APPS = [
+    'modeltranslation',
+    # приложение, которое позволяет делать удобные переводы в моделях. (pip install django-modeltranslation)
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -88,6 +89,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'NewsPortal.wsgi.application'
+
+LANGUAGES = [
+    ('en-us', 'English'),
+    ('ru', 'Русский')
+]
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -238,76 +244,75 @@ LOGGING = {
     'disable_existing_loggers': False,
 
     'formatters': {
-        # Фильтр сообщения уровня DEBUG и выше, включающие:
-        # время, уровень сообщения, сообщения.
-        'log-format-D': {
+        # Для DEBUG
+        'log-format-debug': {
             'format': '%(asctime)s %(levelname)s %(message)s'
         },
-        # Для INFO выводиться время, уровень, модуль и сообщение.
-        'log-format-I': {
+        # Для INFO
+        'log-format-info': {
             'format': '%(asctime)s %(levelname)s %(module)s %(message)s'
         },
-        # Для WARNING дополнительно выводиться путь к источнику события
-        'log-format-W': {
+        # Для WARNING
+        'log-format-warning': {
             'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'
         },
-        # Для ERROR и CRITICAL выводить стэк ошибки
-        'log-format-EC': {
+        # Для ERROR и CRITICAL
+        'log-format-ec': {
             'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s %(exc_info)s'
         },
         'mail_format': {
-            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'
+            'format': '%(asctime)s %(pathname)s %(levelname)s %(message)s'
         },
     },
     'filters': {
-        'filter_Debug_False': {
+        'Debug_False': {
             '()': 'django.utils.log.RequireDebugFalse'
         },
-        'filter_Debug_True': {
+        'Debug_True': {
             "()": "django.utils.log.RequireDebugTrue",
         }
     },
     'handlers': {
-        # вывод в консоль уровня DEBUG
+        # вывод в консоль  DEBUG
         'console': {
             'class': 'logging.StreamHandler',
-            'formatter': 'log-format-D',
+            'formatter': 'log-format-debug',
             'level': 'DEBUG',
-            'filters': ['filter_Debug_True']
+            'filters': ['Debug_True']
         },
         "console_error": {
             "class": "logging.StreamHandler",
-            "formatter": "log-format-W",
-            "filters": ['filter_Debug_True'],
+            "formatter": "log-format-warning",
+            "filters": ['Debug_True'],
             "level": "ERROR",
         },
         "console_warning": {
             "class": "logging.StreamHandler",
-            "formatter": "log-format-EC",
-            "filters": ['filter_Debug_True'],
+            "formatter": "log-format-ec",
+            "filters": ['Debug_True'],
             "level": "WARNING",
         },
-        # вывод в general.log уровень INFO
+        # вывод в general.log INFO
         'general_file': {
             'class': 'logging.FileHandler',
             'filename': 'general.log',
             'level': 'INFO',
-            'formatter': 'log-format-I',
-            'filters': ['filter_Debug_False']
+            'formatter': 'log-format-info',
+            'filters': ['Debug_False']
         },
-        # вывод в errors.log уровень ERROR и CRITICAL
-        'errors_file': {
+        # вывод в errors.log  ERROR и CRITICAL
+        'errors_critical_file': {
             'class': 'logging.FileHandler',
             'filename': 'errors.log',
             'level': 'ERROR',
-            'formatter': 'log-format-EC'
+            'formatter': 'log-format-ec'
         },
-        # вывод в security.log уровень INFO
+        # вывод в security.log  INFO
         'security_file': {
             'class': 'logging.FileHandler',
             'filename': 'security.log',
             'level': 'INFO',
-            'formatter': 'log-format-W'
+            'formatter': 'log-format-warning'
         },
         # отправка на почту ERROR и CRITICAL
         'mail_admins': {
@@ -317,37 +322,37 @@ LOGGING = {
         }
     },
     'loggers': {
-        'django': {  # Принимает все сообщения, но в него ничего не записывается
+        'django': {
             'handlers': [
                 'console',
                 'general_file',
-                'errors_file',
+                'errors_critical_file',
                 'mail_admins'
             ],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django.request': {  # Сообщения связанные с ошибками обработки запроса
-            'handlers': ['errors_file', 'mail_admins'],
+            'handlers': ['errors_critical_file', 'mail_admins'],
             'level': 'ERROR',
             'propagate': True
         },
         'django.server': {  # Сообщения возникающие при запуске приложения
-            'handlers': ['errors_file', 'mail_admins'],
+            'handlers': ['errors_critical_file', 'mail_admins'],
             'level': 'ERROR',
             'propagate': True
         },
-        'django.template': {  # Регистрирующих события с шаблонами
-            'handlers': ['errors_file'],
+        'django.template': {  # Регистрируем события с шаблонами
+            'handlers': ['errors_critical_file'],
             'level': 'ERROR',
             'propagate': False,
         },
-        'django.db.backends': {  # Регистрирующих события в БД
-            'handlers': ['errors_file'],
+        'django.db.backends': {  # Регистрируем события в БД
+            'handlers': ['errors_critical_file'],
             'level': 'ERROR',
             'propagate': False,
         },
-        'django.security': {  # Регистрирующих события нарушения безопасности
+        'django.security': {  # Регистрируем события нарушения безопасности
             'handlers': ['security_file', 'mail_admins'],
             'level': 'INFO',
             'propagate': True,

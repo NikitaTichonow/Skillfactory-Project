@@ -3,18 +3,31 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from datetime import datetime
 
 from django.db.models import Exists, OuterRef
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.decorators.csrf import csrf_protect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
 from .forms import NewsForm, ArticleForm
 from .models import Post, Category, Subscription
 from .filters import PostFilter
 from django.db import models
 from django.utils.translation import gettext as _
 from django.utils.translation import pgettext_lazy # импортируем «ленивый» геттекст с подсказкой
+from django.utils.translation import activate
+# ======== TEST ========================================================================================================
+class Test_page(View):
+    def get(self, request):
+        string = _('Hello world')
 
 
+        # return HttpResponse(string)
+
+        context = {
+            'string': string
+        }
+
+        return HttpResponse(render(request, 'news/test.html', context))
 
 # ====== Стартовая страница ============================================================================================
 def Start_Padge(request):

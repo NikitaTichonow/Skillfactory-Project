@@ -1,7 +1,11 @@
 {% extends 'flatpages/default.html' %}
+
 {% load custom_filters %}
 
 {% block content %}
+
+{% load i18n %}
+
     <h2>Новости</h2>
 <hr />
 <h3>Сейчас {{ time_now|date:'d F Y / H:i' }} </h3>
@@ -45,6 +49,8 @@
        {% endif %}
    {% endif %}
 
+<body>
 
+</body>
 
 {% endblock %}
